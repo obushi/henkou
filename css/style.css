@@ -1,0 +1,130 @@
+html,
+body {
+	height: 100%;
+}
+
+/* スピナー | 詳細は-> loading.css */
+
+#wrapper {
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+/* ヘッダーのスタイル */
+
+#head-wrap {
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+	padding: 5px 0 5px 0;
+	display: table;
+}
+
+
+#class-selector {
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+	width: 260px;
+	line-height: 30px;
+	font-size: 120%;
+	text-indent: .7em;
+	color: rgb(221, 221, 221);
+	background: rgba(34, 34, 34, .8);
+	border: none;
+	cursor: pointer;
+}
+
+/* コンテンツのスタイル */
+
+.page .content-block-title,
+.page .content-block,
+.page .list-block {
+	display: none;
+}
+
+/* 授業変更の一覧で用いるスタイル */
+
+p.labels {
+	text-shadow: rgba(12,12,12,.05) 1px 1px 0px;
+}
+
+ul.info > li{
+	list-style-type: none;
+}
+
+.media-list .item-inner {
+	padding-left: 15px;
+}
+
+/* 自分のクラスを枠で囲む */
+.class-name {
+	font-weight: 400;
+	letter-spacing: .1em;
+	color: #222;
+	border: 1px solid #222;
+	border-radius: 6px;
+	margin: 0 4px;
+	padding: 0 4px;
+}
+
+.class-time {
+	font-weight: 400;
+}
+
+/* 備考のスタイル */
+.item-etc {
+	color: #666;
+}
+
+
+/* 左パネルのスタイル */
+
+.panel {
+	background: #222;
+	color: #dddddd;
+}
+
+.panel-left .content-block,
+.panel-left .content-block-title {
+	color: #dddddd
+}
+
+.panel-left .list-block ul {
+	background: none
+}
+
+.panel-left .list-block ul,
+.panel-left .list-block .item-inner {
+	border-color: rgba(255,255,255,0.1)
+}
+
+.panel-left .list-block a {
+	color: inherit
+}
+
+.panel-left .list-block a:active {
+	background: #000
+}
+
+/* エラー時の表示 */
+
+.notice {	
+	color: #666;
+	display: block;
+	width: 200px;
+	height: 30px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+i.fa-cloud-download,
+i.fa-bullhorn {
+	color: #666;
+	font-size: 80px;
+	display: block;
+	width: 80px;
+	height: 80px;
+	margin: 50px auto 20px auto;
+}

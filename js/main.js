@@ -1,6 +1,6 @@
 var myApp = new Framework7(
 {
-	onPageInit : function(page){},
+	onPageInit : function (page){},
 	onPageAfterAnimation : function(page){},
 	onPageBeforeAnimation : function(page){}
 });
@@ -36,7 +36,7 @@ $(function() {
 	}
 });
 
-$(document).on('change', '#class-selector', function(){
+$(document).on('change', '#class-selector', function (){
 	if ($(this).val() != '0') {
 		var selectedClass = $(this).val();
 		storage.myClass = $(this).val();
@@ -46,16 +46,13 @@ $(document).on('change', '#class-selector', function(){
 });
 
 // 更新時の描画およびデータ取得
-function refresh(){
-	// $('div.page .content-block-title').remove();
-	// $('div.page .content-block').remove();
-	// $('div.page .list-block').remove();
+function refresh (){
 	myApp.showPreloader('取得中...');
 	fetchJson(storage.myClass);
 }
 
 // JSONの取得及びエラー処理
-function fetchJson(cls) {
+function fetchJson (cls) {
 
 	// タイムアウト時のエラー表示
 	var timer = setTimeout(function(){
@@ -85,7 +82,7 @@ function fetchJson(cls) {
 }
 
 // 取得したデータの表示
-function show(isConnected) {
+function show (isConnected) {
 	$('ul#info-list .page-content > *').remove();
 	if (storage.myData == '["nodata"]') {
 		$('#class-change').remove();
@@ -128,7 +125,10 @@ function show(isConnected) {
 			}
 
 			moment.lang('ja');
-			var daysLeft = moment(data[i].year+data[i].month+data[i].day, "YYYYMMDD").fromNow();
+			classTime = ['08:50', '10:30', '13:00', '14:40'];
+			classNum = (parseInt(data[i].time.substr(1,1)) / 2) - 1;
+			beginsAt = moment(data[i].year + '-' + data[i].month + '-' + data[i].day + ' ' + classTime[classNum]);
+			var daysLeft = beginsAt.fromNow();
 
 			$('#info-list .item-title').eq(i).append('<span class="class-name">'+data[i].class+'</span>'+monthStr+'/'+data[i].day+' ('+dayStr+') '+'<span class="class-time">'+data[i].time.substr(0,1)+'·'+data[i].time.substr(1,1)+'限</span>');
 			$('#info-list .item-after').eq(i).append(daysLeft);
